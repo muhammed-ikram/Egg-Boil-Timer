@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+h1 i {
+    color: #e67e22;
+    margin: 0 1rem;
+}
+
+.egg-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.egg-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.egg-card:hover {
+    transform: translateY(-5px);
+}
+
+.egg-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.egg-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.egg-card p {
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.start-btn {
+    background: #e67e22;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.start-btn:hover {
+    background: #d35400;
+}
+
+.timer {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.active-timer {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e67e22;
+    margin: 1rem 0;
+}
+
+.stop-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.stop-btn:hover {
+    background: #c0392b;
+}
+
+/* Alarm animation styles */
+@keyframes alarm {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.alarm-active {
+    animation: alarm 0.5s ease-in-out infinite;
+    background: #ff6b6b !important;
+}
+
+.alarm-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #e74c3c;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+}
+
+.alarm-notification.show {
+    transform: translateX(0);
+}
+
+.alarm-notification h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.alarm-notification p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h1 i {
+        margin: 0 0.5rem;
+    }
+
+    .egg-types {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .egg-card {
+        padding: 1rem;
+    }
+
+    .egg-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .egg-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .egg-card p {
+        font-size: 0.85rem;
+    }
+
+    .timer {
+        font-size: 1.3rem;
+    }
+
+    .active-timer {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .timer-display {
+        font-size: 2.5rem;
+    }
+
+    .start-btn, .stop-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .alarm-notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        transform: translateY(-120%);
+    }
+
+    .alarm-notification.show {
+        transform: translateY(0);
+    }
+}
+
+/* Additional breakpoint for very small devices */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .egg-card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .timer-display {
+        font-size: 2rem;
+    }
+
+    .start-btn, .stop-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+} 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egg Boiling Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-egg"></i> Perfect Egg Timer <i class="fas fa-egg"></i></h1>
+        
+        <div class="egg-types">
+            <div class="egg-card" data-time="4">
+                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046874.png" alt="Soft Boiled Egg">
+                <h3>Soft Boiled</h3>
+                <p>Runny yolk, firm white</p>
+                <button class="start-btn">Start Timer</button>
+                <div class="timer">04:00</div>
+            </div>
+
+            <div class="egg-card" data-time="6">
+                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046874.png" alt="Medium Boiled Egg">
+                <h3>Medium Boiled</h3>
+                <p>Partially set yolk</p>
+                <button class="start-btn">Start Timer</button>
+                <div class="timer">06:00</div>
+            </div>
+
+            <div class="egg-card" data-time="8">
+                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046874.png" alt="Hard Boiled Egg">
+                <h3>Hard Boiled</h3>
+                <p>Firm yolk and white</p>
+                <button class="start-btn">Start Timer</button>
+                <div class="timer">08:00</div>
+            </div>
+
+            <div class="egg-card" data-time="10">
+                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046874.png" alt="Well Done Egg">
+                <h3>Well Done</h3>
+                <p>Fully cooked through</p>
+                <button class="start-btn">Start Timer</button>
+                <div class="timer">10:00</div>
+            </div>
+        </div>
+
+        <div class="active-timer" id="activeTimer">
+            <h2>Active Timer</h2>
+            <div class="timer-display">00:00</div>
+            <button class="stop-btn" style="display: none;">Stop Timer</button>
+        </div>
+    </div>
+
+    <!-- Updated audio element with a new sound source -->
+    <audio id="alarmSound" preload="auto" loop>
+        <source src="alarm.mp3" type="audio/mp3">
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html> 
